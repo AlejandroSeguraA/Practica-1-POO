@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 class Alumno{
 	String nombre;
-    int matricula;
+    String matricula;
     String correo;
     String telefono;
-    double promedio;
+    int promedio;
 
 	public void setNombre(String nom){
 		nombre = nom;
@@ -15,11 +15,11 @@ class Alumno{
 		return nombre;
 	}
 
-	public void setMatricula(int mat){
+	public void setMatricula(String mat){
 		matricula = mat;
 	}
 
-	public int getMatricula(){
+	public String getMatricula(){
 		return matricula;
 	}
 
@@ -39,52 +39,50 @@ class Alumno{
 		return telefono;
 	}
 
-	public void setPromedio(double prom){
+	public void setPromedio(int prom){
 		promedio = prom;
 	}
 
-	public double getPromedio(){
+	public int getPromedio(){
 		return promedio;
 	}
 }
 public class Practica2POO{
 	public static void main(String args[]){
+		String prueba;
+		int cant;
 		Scanner scan = new Scanner(System.in);
+
+		System.out.print("Ingrese la cantidad de alumnos que quiera ingresar: ");
 		
-		Alumno al[] = new Alumno[2];
-		
-		al[0] = new Alumno();
-		al[0].setNombre("Arturo");
-		al[0].setMatricula(1283887);
-		al[0].setCorreo("arturoanturoturro@uabc.edu.mx");
-		al[0].setTelefono("6638769879");
-		al[0].setPromedio(98.9);
+		cant = scan.nextInt();
 
-		al[1] = new Alumno();
-		System.out.println("Ingrese el nombre del alumno: ");
-		al[1].setNombre(scan.nextLine());
-		System.out.println("Ingrese la matricula del alumno: ");
-		al[1].setMatricula(Integer.parseInt(scan.nextLine()));
-		System.out.println("Ingrese el correo del alumno: ");
-		al[1].setCorreo(scan.nextLine());
-		System.out.println("Ingrese el telefono del alumno: ");
-		al[1].setTelefono(scan.nextLine());
-		System.out.println("Ingrese el promedio del alumno: ");
-		al[1].setPromedio(Double.parseDouble(scan.nextLine()));
+		Alumno al[] = new Alumno[cant];
 
-		System.out.println("Alumno 1");
-		System.out.println("Nombre: "+al[0].getNombre());
-		System.out.println("Matricula: "+al[0].getMatricula());
-		System.out.println("Correo: "+al[0].getCorreo());
-		System.out.println("Telefono: "+al[0].getTelefono());
-		System.out.println("Promedio: "+al[0].getPromedio());
-		System.out.println("");
+		for(int i=0; i<cant; i++){
+			int num = i+1;
+			al[i] = new Alumno();
+			System.out.print("Ingrese el nombre del alumno: ");
+			prueba = scan.nextLine();
+			al[i].setNombre(scan.nextLine());
+			System.out.print("Ingrese la matricula del alumno: ");
+			al[i].setMatricula(scan.nextLine());
+			System.out.print("Ingrese el correo del alumno: ");
+			al[i].setCorreo(scan.nextLine());
+			System.out.print("Ingrese el telefono del alumno: ");
+			al[i].setTelefono(scan.nextLine());
+			System.out.print("Ingrese el promedio del alumno: ");
+			al[i].setPromedio(scan.nextInt());
+			System.out.println("");
 
-		System.out.println("Alumno 2");
-		System.out.println("Nombre: "+al[1].getNombre());
-		System.out.println("Matricula: "+al[1].getMatricula());
-		System.out.println("Correo: "+al[1].getCorreo());
-		System.out.println("Telefono: "+al[1].getTelefono());
-		System.out.println("Promedio: "+al[1].getPromedio());
+			System.out.println("Alumno numero "+num);
+			System.out.println("Nombre: "+al[i].getNombre());
+			System.out.println("Matricula: "+al[i].getMatricula());
+			System.out.println("Correo: "+al[i].getCorreo());
+			System.out.println("Telefono: "+al[i].getTelefono());
+			System.out.println("Promedio: "+al[i].getPromedio());
+			System.out.println("");
+		}	
+
 	}
 }
