@@ -154,6 +154,7 @@ public class Practica5{
         System.out.println("Telefono Alumno: "+al1.getTelfn());
         System.out.println("Matricula Alumno: "+al1.getMatricula());
         System.out.println("Promedio Alumno: "+al1.getCalif());
+        System.out.println("");
         
         System.out.println("EMPLEADO");
         System.out.println("Nombre Empleado: "+emp1.getNombre());
@@ -162,6 +163,7 @@ public class Practica5{
         System.out.println("Numero de Empleado: "+emp1.getNumEmp());
         System.out.println("Sueldo Empleado: "+emp1.getSueldo());
         System.out.println("Numero de Seguro Empleado: "+emp1.getSeguro());
+        System.out.println("");
 
         System.out.println("FAMILIA");
         System.out.println("Nombre Familiar: "+fam1.getNombre());
