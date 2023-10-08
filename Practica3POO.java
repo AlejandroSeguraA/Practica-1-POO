@@ -21,11 +21,11 @@ class Persona{
 		return correo;
 	}
 
-	public void setTelfn(String tel){
+	public void setTelefono(String tel){
 		telefono = tel;
 	}
 
-	public String getTelfn(){
+	public String getTelefono(){
 		return telefono;
 	}
 }
@@ -43,11 +43,11 @@ class Alumno extends Persona{
         return matricula;
     }
 
-    public void setPromedio(double prom){
+    public void setPromed(double prom){
         promedio = prom;
     }
 
-    public double getPromedio(){
+    public double getPromed(){
         return promedio;
     }
 }
@@ -76,89 +76,62 @@ class Profesor extends Persona{
 
 public class Practica3POO{
     public static void main(String args[]){
+        int cant;
+        String prueba;
 
         Scanner scan = new Scanner(System.in);
 
-        Alumno al1 = new Alumno();
-        Alumno al2 = new Alumno();
-        Alumno al3 = new Alumno();
-        Alumno al4 = new Alumno();
+		System.out.print("Ingrese la cantidad de alumnos que quiera ingresar: ");
+		
+		cant = scan.nextInt();
 
-        Profesor prof1 = new Profesor();
+		Alumno al[] = new Alumno[cant];
 
-        al1.setNombre("Miguel");
-        al1.setCorreo("miguelmigui@uabc.edu.mx");
-        al1.setTelfn("6645554356");
-        al1.setMatricula("1282654");
-        al1.setPromedio(99.1);
+		for(int i=0; i<cant; i++){
+			int num = i+1;
+			al[i] = new Alumno();
+			System.out.print("Ingrese el nombre del alumno: ");
+			prueba = scan.nextLine();
+			al[i].setNombre(scan.nextLine());
+			System.out.print("Ingrese la matricula del alumno: ");
+			al[i].setMatricula(scan.nextLine());
+			System.out.print("Ingrese el correo del alumno: ");
+			al[i].setCorreo(scan.nextLine());
+			System.out.print("Ingrese el telefono del alumno: ");
+			al[i].setTelefono(scan.nextLine());
+			System.out.print("Ingrese el promedio del alumno: ");
+			al[i].setPromed(scan.nextDouble());
+			System.out.println("");
 
-        al2.setNombre("Jairo");
-        al2.setCorreo("Jairoelmairo@uabc.edu.mx");
-        al2.setTelfn("6633335577");
-        al2.setMatricula("1280778");
-        al2.setPromedio(86.2);
+			System.out.println("Alumno numero "+num);
+			System.out.println("Nombre: "+al[i].getNombre());
+			System.out.println("Matricula: "+al[i].getMatricula());
+			System.out.println("Correo: "+al[i].getCorreo());
+			System.out.println("Telefono: "+al[i].getTelefono());
+			System.out.println("Promedio: "+al[i].getPromed());
+			System.out.println("");
+		}
 
-		System.out.println("Ingrese el nombre del tercer alumno: ");
-		al3.setNombre(scan.nextLine());
-		System.out.println("Ingrese el correo del tercer alumno: ");
-		al3.setCorreo(scan.nextLine());
-		System.out.println("Ingrese el telefono del tercer alumno: ");
-		al3.setTelfn(scan.nextLine());
-        System.out.println("Ingrese la matricula del tercer alumno: ");
-        al3.setMatricula(scan.nextLine());
-		System.out.println("Ingrese el promedio del tercer alumno: ");
-		al3.setPromedio(Double.parseDouble(scan.nextLine()));
+        Profesor prof = new Profesor();
 
-		System.out.println("Ingrese el nombre del cuarto alumno: ");
-		al4.setNombre(scan.nextLine());
-		System.out.println("Ingrese la matricula del cuarto alumno: ");
-		al4.setMatricula(scan.nextLine());
-		System.out.println("Ingrese el correo del cuarto alumno: ");
-		al4.setCorreo(scan.nextLine());
-		System.out.println("Ingrese el telefono del cuarto alumno: ");
-		al4.setTelfn(scan.nextLine());
-		System.out.println("Ingrese el promedio del cuarto alumno: ");
-		al4.setPromedio(Double.parseDouble(scan.nextLine()));
-
-        prof1.setNombre("Jesus");
-        prof1.setCorreo("jesuselsus@uabc.edu.mx");
-        prof1.setTelfn("6645228695");
-        prof1.setNumEmp(15);
-        prof1.setSueldo(6479.50);
-
-        System.out.println("Nombre primer Alumno: "+al1.getNombre());
-        System.out.println("Correo primer Alumno: "+al1.getCorreo());
-        System.out.println("Telefono primer Alumno: "+al1.getTelfn());
-        System.out.println("Matricula primer Alumno: "+al1.getMatricula());
-        System.out.println("Promedio primer Alumno: "+al1.getPromedio());
+        System.out.print("Ingrese el Nombre del Profesor: ");
+        prueba = scan.nextLine();
+        prof.setNombre(scan.nextLine());
+        System.out.print("Ingrese el Numero de Empleado del Profesor: ");
+        prof.setNumEmp(scan.nextInt());
+        System.out.print("Ingrese el Correo del Profesor: ");
+        prueba = scan.nextLine();
+        prof.setCorreo(scan.nextLine());
+        System.out.print("Ingrese el Telefono del Profesor: ");
+        prof.setTelefono(scan.nextLine());
+        System.out.print("Ingrese el Sueldo del Profesor: ");
+        prof.setSueldo(scan.nextDouble());
         System.out.println("");
 
-        System.out.println("Nombre segundo Alumno: "+al2.getNombre());
-        System.out.println("Correo segundo Alumno: "+al2.getCorreo());
-        System.out.println("Telefono segundo Alumno: "+al2.getTelfn());
-        System.out.println("Matricula segundo Alumno: "+al2.getMatricula());
-        System.out.println("Promedio segundo Alumno: "+al2.getPromedio());
-        System.out.println("");
-
-        System.out.println("Nombre tercer Alumno: "+al3.getNombre());
-        System.out.println("Correo tercer Alumno: "+al3.getCorreo());
-        System.out.println("Telefono tercer Alumno: "+al3.getTelfn());
-        System.out.println("Matricula tercer Alumno: "+al3.getMatricula());
-        System.out.println("Promedio tercer Alumno: "+al3.getPromedio());
-        System.out.println("");
-
-        System.out.println("Nombre cuarto Alumno: "+al4.getNombre());
-        System.out.println("Correo cuarto Alumno: "+al4.getCorreo());
-        System.out.println("Telefono cuarto Alumno: "+al4.getTelfn());
-        System.out.println("Matricula cuarto Alumno: "+al4.getMatricula());
-        System.out.println("Promedio cuarto Alumno: "+al4.getPromedio());
-        System.out.println("");
-
-
-        System.out.println("Nombre Profesor: "+prof1.getNombre());
-        System.out.println("Numero de Empleado: "+prof1.getNumEmp());
-        System.out.println("Correo Profesor: "+prof1.getCorreo());
-        System.out.println("Telefono Profesor: "+prof1.getTelfn());
-        System.out.println("Sueldo: "+prof1.getSueldo());
+        System.out.println("Nombre Profesor: "+prof.getNombre());
+        System.out.println("Numero de Empleado: "+prof.getNumEmp());
+        System.out.println("Correo Profesor: "+prof.getCorreo());
+        System.out.println("Telefono Profesor: "+prof.getTelefono());
+        System.out.println("Sueldo: "+prof.getSueldo());
     }
 }
